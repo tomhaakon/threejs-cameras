@@ -11,8 +11,11 @@ sendError('loaded', 'main.js') // send msg that main.js is loaded
 function main() {
   //
   const canvas = document.querySelector('#c')
-  const renderer = new THREE.WebGLRenderer({ antialias: true, canvas })
-
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    canvas,
+    logarithmicDepthBuffer: true,
+  })
   const fov = 45
   const aspect = 2 // the canvas default
   const near = 0.00001
